@@ -1,0 +1,15 @@
+<div class="container-fluid bg-light page-container mb-2" data-toggle="collapse" [attr.data-target]="'#'+id" aria-expanded="false" [attr.aria-controls]="id" role="button" (click)="collapsed = !collapsed">
+    <span class="page name font-weight-bold">{{group_detail.name}}</span>
+    <span class="page desc">{{group_detail.description}}</span>
+    <span class="page more">{{group_detail.other_details}}</span>
+    <i [hidden]="!collapsed" class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+    <i [hidden]="collapsed" class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+</div>
+
+<div class="collapse" [attr.id]="id">
+    <jsadoc-api-doc
+        [api]="api"
+        *ngFor="let api of pagegroup.api_list; let i = index"
+        [id]="id+'_api_'+i"
+    ></jsadoc-api-doc>
+</div>

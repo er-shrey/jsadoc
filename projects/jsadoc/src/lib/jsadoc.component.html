@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <jsadoc-header [header]="json.header"></jsadoc-header>
+</div>
+<div class="container-fluid">
+    <jsadoc-page
+        [pagegroup]="pagegroup"
+        *ngFor="let pagegroup of json.group; let i = index"
+        [id] = "'page_'+i"
+    ></jsadoc-page>
+</div>

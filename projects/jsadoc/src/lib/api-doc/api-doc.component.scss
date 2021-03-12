@@ -1,0 +1,61 @@
+:host {
+    .api-container {
+        display: flex;
+        padding: 10px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .api {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 16px;
+    }
+
+    .method {
+        width: 90px;
+        padding: 6px 15px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .url {
+        overflow: unset;
+        white-space: unset;
+        text-overflow: unset;
+    }
+
+    .url-desc {
+        margin-right: auto;
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    .desc {
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    .res-type-list {
+        width: 150px;
+    }
+
+    .res-type-list:hover {
+        color: unset;
+        background-color: unset;
+        border-color: unset;
+        box-shadow: unset;
+    }
+
+    .json-viewer {
+        height: 200px;
+        overflow: auto;
+    }
+
+    ::ng-deep .segment-key {
+        color: white !important;
+    }
+}

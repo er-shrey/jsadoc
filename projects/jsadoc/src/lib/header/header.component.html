@@ -1,0 +1,83 @@
+<div class="jumbotron bg-light m-3">
+    <span
+        class="display-4"
+    >
+        {{header.title}}
+        <sup>
+            <span class="badge badge-pill badge-info version">{{header.version}}</span>
+        </sup>
+    </span>
+    <div class="text-muted base-url mb-4">
+        [&nbsp;&nbsp;Base URL: {{header.base_url}}&nbsp;&nbsp;]
+    </div>
+    <p class="lead">{{header.description}}</p>
+    <hr class="my-4">
+    <div class="d-flex justify-content-end flex-wrap">
+        <!-- Terms and Conditions -->
+        <button
+            type="button"
+            class="btn btn-outline-danger mr-3"
+            data-toggle="modal" data-target="#fileModal"
+            (click)="openModal('terms')"
+        >
+            <i class="fa fa-shield mr-2" aria-hidden="true"></i>
+            Terms & Conditions
+        </button>
+        <!-- License -->
+        <button
+            type="button"
+            class="btn btn-outline-warning mr-3"
+            data-toggle="modal" data-target="#fileModal"
+            (click)="openModal('license')"
+        >
+            <i class="fa fa-key mr-2" aria-hidden="true"></i>
+            License
+        </button>
+        <!-- Learn More -->
+        <a
+            class="btn btn-outline-info mr-3"
+            [href]="header.learn_more_url"
+            target="_blank"
+            role="button"
+        >
+            <i class="fa fa-leanpub mr-2" aria-hidden="true"></i>
+            Learn More
+        </a>
+        <!-- Contact Us -->
+        <a
+            class="btn btn-outline-secondary mr-3"
+            [href]="'mailto:'+header.contact_email+'?subject=API Docs'"
+            target="_top"
+            role="button"
+        >
+            <i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>
+            Contact Us
+        </a>
+    </div>
+</div>
+<!-- Modal -->
+<div
+    class="modal fade"
+    id="fileModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="fileModal"
+    aria-hidden="true"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{modalHeader}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-content">
+                <div [innerHTML]="modalBody | safeHtml"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="border mb-2 rounded" [ngClass]="'border-'+getMethodColor()">
+  <!-- API DETAIL BOX START -->
+  <div
+    class="container-fluid api-container"
+    [ngClass]="['border-'+getMethodColor(), 'bg-'+getMethodColor()+'-light', getBottomBorder()]"
+    data-toggle="collapse"
+    [attr.data-target]="'#'+id"
+    aria-expanded="false"
+    [attr.aria-controls]="id"
+    role="button"
+    (click)="collapsed = !collapsed"
+  >
+    <span
+      class="api method rounded text-light mr-3 font-weight-bold"
+      [ngClass]="'bg-'+getMethodColor()"
+    >{{api.method}}</span>
+    <span class="api url mr-3 font-weight-bold">{{api.url}}</span>
+    <span class="api url-desc">{{api.description}}</span>
+    <span class="api desc ml-3 mr-3 font-weight-bold">{{api.other_details}}</span>
+    <i class="fa fa-unlock-alt text-secondary" aria-hidden="true"></i>
+  </div>
+  <!-- API DETAIL BOX END -->
+  <div class="collapse" [ngClass]="'bg-'+getMethodColor()+'-light'" [attr.id]="id">
+    <!-- API PARAMETER BOX START -->
+    <div class="d-flex bg-light justify-content-between align-items-center p-2 pl-3 pr-3">
+      <span class="font-weight-bold">Parameters</span>
+      <button type="button" class="btn btn-outline-dark" *ngIf="api.can_try">Try</button>
+    </div>
+    <div class="container-fluid">
+      <div class="row pt-4 pl-4 pr-4">
+        <div class="col-lg-2 h6 font-weight-bold">Key</div>
+        <div class="col-lg-3 h6 font-weight-bold">Type</div>
+        <div class="col-lg-7 h6 font-weight-bold">Description</div>
+        <hr class="w-100">
+      </div>
+      <div class="row pl-4 pr-4 mb-2" *ngFor="let parameter of parameters">
+        <div class="col-lg-2 h6"
+          [ngClass]="{'font-weight-bold': parameter.is_required}"
+        >
+          {{parameter.key}}
+          <sup *ngIf="parameter.is_required" class="text-danger">
+            <small>
+              <i
+                class="fa fa-asterisk"
+                aria-hidden="true"
+              ></i>
+              Required
+            </small>
+          </sup>
+        </div>
+        <div class="col-lg-3 h6">{{parameter.type}}</div>
+        <div class="col-lg-7 h6">{{parameter.description}}</div>
+      </div>
+    </div>
+    <!-- API PARAMETER BOX END -->
+    <!-- API RESPONSE BOX START -->
+    <div class="d-flex bg-light justify-content-start align-items-center p-2 pl-3 pr-3">
+      <span class="font-weight-bold mr-auto">Response</span>
+      <span class="font-weight-bold mr-2">Response content type:</span>
+      <select class="btn btn-outline-dark res-type-list mt-1 mb-1">
+        <option
+          *ngFor="let content_type of response.available_content_type"
+          [value]="content_type"
+          [selected]="content_type == response.content_type"
+        >{{content_type}}</option>
+      </select>
+    </div>
+    <div class="container-fluid">
+      <div class="row pt-4 pl-4 pr-4">
+        <div class="col-lg-2 h6 font-weight-bold">Code</div>
+        <div class="col-lg-10 h6 font-weight-bold">Description</div>
+        <hr class="w-100">
+      </div>
+      <div class="row pl-4 pr-4" *ngFor="let message of response.messages">
+        <div class="col-lg-2 h6">{{message.status_code}}</div>
+        <div class="col-lg-10 h6">
+          <p>{{message.description}}</p>
+          <p class="font-weight-bold mt-3" *ngIf="message.message">Example Value</p>
+          <div class="bg-dark text-light json-viewer mt-3 mb-3" *ngIf="message.message">
+            <ngx-json-viewer [json]="message.message" [expanded]="true"></ngx-json-viewer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- API RESPONSE BOX END -->
+  </div>
+</div>

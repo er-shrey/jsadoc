@@ -1,0 +1,169 @@
+{
+  "header": {
+    "title": "Test API Document",
+    "version": "v 1.0.0",
+    "base_url": "http://localhost/v1/",
+    "description": "This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.",
+    "lisence": "/assets/files/license.html",
+    "contact_email": "shrey.kumar.jain@gmail.com",
+    "termsConditions": "/assets/files/terms_n_conditions.html",
+    "learn_more_url": "https://www.google.com"
+  },
+  "group": [
+    {
+      "group_detail": {
+        "name": "Page1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "other_details": "Lorem ipsum dolor"
+      },
+      "api_list": [
+        {
+          "method": "GET",
+          "url": "/api-url",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          "other_details": "Lorem ipsum dolor",
+          "can_try": true,
+          "parameters": [
+            {
+              "key": "Key1",
+              "is_required": true,
+              "type": "string",
+              "description": "Description"
+            },
+            {
+              "key": "Key2",
+              "is_required": false,
+              "type": "number",
+              "description": "Description2"
+            }
+          ],
+          "response": {
+            "content_type": "JSON",
+            "available_content_type": ["JSON", "XML"],
+            "messages": [
+              {
+                "status_code": 200,
+                "description": "Successful Operation",
+                "message": {"message": "hello", "world": "ole"}
+              },
+              {
+                "status_code": 404,
+                "description": "Not Found"
+              }
+            ]
+          }
+        },
+        {
+          "method": "POST",
+          "url": "/api-url",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          "other_details": "Lorem ipsum dolor",
+          "can_try": true,
+          "parameters": [
+            {
+              "key": "Key1",
+              "is_required": true,
+              "type": "string",
+              "description": "Description"
+            },
+            {
+              "key": "Key2",
+              "is_required": false,
+              "type": "number",
+              "description": "Description2"
+            }
+          ],
+          "response": {
+            "content_type": "JSON",
+            "available_content_type": ["JSON", "XML"],
+            "messages": [
+              {
+                "status_code": 200,
+                "description": "Successful Operation",
+                "message": {"message": "hello", "world": "ole"}
+              },
+              {
+                "status_code": 404,
+                "description": "Not Found"
+              }
+            ]
+          }
+        },
+        {
+          "method": "PUT",
+          "url": "/api-url",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          "other_details": "Lorem ipsum dolor",
+          "can_try": true,
+          "parameters": [
+            {
+              "key": "Key1",
+              "is_required": true,
+              "type": "string",
+              "description": "Description"
+            },
+            {
+              "key": "Key2",
+              "is_required": false,
+              "type": "number",
+              "description": "Description2"
+            }
+          ],
+          "response": {
+            "content_type": "JSON",
+            "available_content_type": ["JSON", "XML"],
+            "messages": [
+              {
+                "status_code": 200,
+                "description": "Successful Operation",
+                "message": {"message": "hello", "world": "ole"}
+              },
+              {
+                "status_code": 404,
+                "description": "Not Found"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group_detail": {
+        "name": "Page1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "other_details": "Lorem ipsum dolor"
+      },
+      "api_list": [
+        {
+          "method": "DELETE",
+          "url": "/api-url",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          "other_details": "Lorem ipsum dolor",
+          "can_try": true,
+          "parameters": [
+            {
+              "key": "Key2",
+              "is_required": false,
+              "type": "number",
+              "description": "Description2"
+            }
+          ],
+          "response": {
+            "content_type": "JSON",
+            "available_content_type": ["JSON", "XML"],
+            "messages": [
+              {
+                "status_code": 200,
+                "description": "Successful Operation"
+              },
+              {
+                "status_code": 404,
+                "description": "Not Found"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

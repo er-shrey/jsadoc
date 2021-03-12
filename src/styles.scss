@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+$color-background:  #fff;
+$color-primary:     #749efb;
+$color-secondary:   #f2f7fe;
+$color-warning:     #FFDDA1;
+$color-info:        #b4d7dd;
+$color-danger:      #FB3640;
+$enable-gradients:    true;
+
+$color-primary-light:       #007bff24;
+$color-secondary-light:     #6c757d24;
+$color-success-light:       #28a74524;
+$color-info-light:          #17a2b824;
+$color-warning-light:       #ffc10724;
+$color-danger-light:        #dc354524;
+
+// $theme-colors: (
+// 	"primary": $color-primary,
+// 	"secondary": $color-secondary,
+// 	"warning": $color-warning,
+// 	"info": $color-info,
+// 	"danger": $color-danger
+// );
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/* Scrollbar */
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+	background: $color-secondary; 
+}
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+	background: $color-primary;
+	border-radius: 4px;
+}
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: $color-primary; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-background{
+    background-color: $color-background;
+}
+
+.full-size{
+    height: 100vh;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+    box-shadow: unset;
+    border: 1px solid #ced4da;
+}
+
+.bg-primary-light {
+    background-color: $color-primary-light;
+}
+.bg-secondary-light {
+    background-color: $color-secondary-light;
+}
+.bg-success-light {
+    background-color: $color-success-light;
+}
+.bg-info-light {
+    background-color: $color-info-light;
+}
+.bg-warning-light {
+    background-color: $color-warning-light;
+}
+.bg-danger-light {
+    background-color: $color-danger-light;
+}
